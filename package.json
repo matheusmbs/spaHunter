@@ -4,21 +4,23 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "engines": {
-    "node": "v8.10.0",
+    "node": "~8.10.0",
     "npm": "5.6.0"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.0.0",
     "@angular/common": "~7.0.0",
+    "@angular/cli": "~7.0.3",
     "@angular/compiler": "~7.0.0",
+    "@angular/compiler-cli": "^7.2.6",
     "@angular/core": "~7.0.0",
     "@angular/forms": "~7.0.0",
     "@angular/http": "~7.0.0",
@@ -28,9 +30,8 @@
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26",
-    "typescript": "~3.1.1",
-    "@angular/cli": "~7.0.3",
-    "@angular/compiler-cli": "^7.2.6"
+    "typescript": "~3.1.1"
+    
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.13.3",
