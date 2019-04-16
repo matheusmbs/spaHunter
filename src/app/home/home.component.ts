@@ -8,6 +8,8 @@ import { UserService, AuthenticationService } from '@app/_services';
 @Component({ templateUrl: 'home.component.html', styleUrls: ['./home.component.css']})
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;
+    email: string;
+    cnpj: string;
     currentUserSubscription: Subscription;
     users: User[] = [];
 
@@ -17,6 +19,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     ) {
         this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
             this.currentUser = user;
+            this.email = (<any>user).user.email;
+            this.cnpj = (<any>user).user.cnpj;
         });
     }
 
