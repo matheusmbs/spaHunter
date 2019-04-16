@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 import { User } from '@app/_models';
 import { UserService, AuthenticationService } from '@app/_services';
 
-@Component({ templateUrl: 'home.component.html' })
+@Component({ templateUrl: 'home.component.html', styleUrls: ['./home.component.css']})
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;
     currentUserSubscription: Subscription;
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+        // this.loadAllUsers();
     }
 
     ngOnDestroy() {

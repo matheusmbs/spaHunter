@@ -26,9 +26,12 @@ export class RegisterComponent implements OnInit {
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName: ['', Validators.required],
-            username: ['', Validators.required],
+            email: ['', [Validators.required, Validators.email]],
+            cnpj: ['', [Validators.required, Validators.minLength(14)]],
+            state: ['', Validators.required],
+            city: ['', Validators.required],
+            postalCode: ['', Validators.required],
+            street: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
     }
@@ -49,7 +52,7 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.success('Registration successful', true);
+                    this.alertService.success('Cadastro realizado com sucesso', true);
                     this.router.navigate(['/login']);
                 },
                 error => {
