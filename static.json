@@ -1,5 +1,5 @@
 {
-    "root": "dist/",
+    "root": "dist/angular-registration-login-example/",
     "https_only": true,
     "routes": {
       "/**": "index.html"
